@@ -1,0 +1,103 @@
+<!-- ✅ Edit User Modal -->
+<div *ngIf="selectedUserForEdit" class="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50">
+  <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-md">
+    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">{{ 'USER.EDIT_TITLE' | translate }}</h3>
+    <form (ngSubmit)="updateUser()">
+      <div class="mb-3">
+        <label class="block text-sm font-medium text-gray-700">{{ 'USER.NAME' | translate }}</label>
+        <input type="text" [(ngModel)]="selectedUserForEdit.name" name="name" required class="w-full mt-1 px-4 py-2 border rounded-md" />
+      </div>
+      <div class="mb-3">
+        <label class="block text-sm font-medium text-gray-700">{{ 'USER.EMAIL' | translate }}</label>
+        <input type="email" [(ngModel)]="selectedUserForEdit.email" name="email" required class="w-full mt-1 px-4 py-2 border rounded-md" />
+      </div>
+      <div class="mb-3">
+        <label class="block text-sm font-medium text-gray-700">{{ 'USER.PHONE' | translate }}</label>
+        <input type="text" [(ngModel)]="selectedUserForEdit.phoneNumber" name="phoneNumber" class="w-full mt-1 px-4 py-2 border rounded-md" />
+      </div>
+      <div class="mb-3">
+        <label class="block text-sm font-medium text-gray-700">{{ 'USER.PASSWORD' | translate }}</label>
+        <input type="password" [(ngModel)]="selectedUserForEdit.password" name="password" class="w-full mt-1 px-4 py-2 border rounded-md" />
+      </div>
+      <div class="mb-5">
+        <label class="block text-sm font-medium text-gray-700">{{ 'USER.ROLE' | translate }}</label>
+        <select [(ngModel)]="selectedUserForEdit.role" name="role" class="w-full mt-1 px-4 py-2 border rounded-md">
+          <option value="admin">{{ 'USER.ROLE_ADMIN' | translate }}</option>
+          <option value="provider">{{ 'USER.ROLE_PROVIDER' | translate }}</option>
+          <option value="seeker">{{ 'USER.ROLE_SEEKER' | translate }}</option>
+        </select>
+      </div>
+
+      <div class="flex justify-center gap-4">
+        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition">
+          {{ 'USER.UPDATE_BTN' | translate }}
+        </button>
+        <button type="button" class="bg-gray-300 px-4 py-2 rounded-md hover:bg-gray-400 transition" (click)="cancelEdit()">
+          {{ 'USER.CANCEL_BTN' | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ✅ Delete Confirmation Modal -->
+<div *ngIf="selectedUserForDelete" class="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50">
+  <div class="bg-white rounded-xl shadow-lg p-6 w-full max-w-sm text-center">
+    <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ 'USER.DELETE_CONFIRM_TITLE' | translate }}</h3>
+    <p class="text-gray-700 mb-6">
+      {{ 'USER.DELETE_CONFIRM_TEXT' | translate }} <strong>{{ selectedUserForDelete.name }}</strong>?
+    </p>
+    <div class="flex justify-center gap-4">
+      <button class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition" (click)="deleteUser()">
+        {{ 'USER.DELETE_CONFIRM_YES' | translate }}
+      </button>
+      <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-300 transition" (click)="cancelDelete()">
+        {{ 'USER.CANCEL_BTN' | translate }}
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ Main User Management Table -->
+<section class="max-w-7xl mx-auto p-6 bg-gray-50 rounded-lg shadow-md">
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+    <h2 class="text-3xl font-bold text-gray-900">{{ 'USER.MANAGEMENT_TITLE' | translate }}</h2>
+    <div class="mt-4 md:mt-0">
+      <input
+        type="search"
+        [placeholder]="'USER.SEARCH_PLACEHOLDER' | translate"
+        [(ngModel)]="searchText"
+        (input)="onSearchChange()"
+        class="w-full md:w-80 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      />
+    </div>
+  </div>
+
+  <div class="overflow-x-auto rounded-lg border border-gray-200">
+    <table class="min-w-full divide-y divide-gray-200">
+      <thead class="bg-indigo-600 text-white">
+        <tr>
+          <th class="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wider">{{ 'USER.NAME' | translate }}</th>
+          <th class="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wider">{{ 'USER.EMAIL' | translate }}</th>
+          <th class="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wider">{{ 'USER.PHONE' | translate }}</th>
+          <th class="px-6 py-3 text-center text-sm font-semibold uppercase tracking-wider">{{ 'USER.ROLE' | translate }}</th>
+          <th class="px-6 py-3 text-center text-sm font-semibold uppercase tracking-wider">{{ 'USER.ACTIONS' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-100">
+        <tr *ngFor="let user of filteredUsers" class="hover:bg-gray-50 transition duration-200">
+          <td class="px-6 py-4 text-gray-900 font-medium">{{ user.name }}</td>
+          <td class="px-6 py-4 text-gray-700">{{ user.email }}</td>
+          <td class="px-6 py-4 text-gray-700">{{ user.phoneNumber }}</td>
+          <td class="px-6 py-4 text-center text-gray-600 capitalize">{{ user.role }}</td>
+          <td class="px-6 py-4 text-center">
+            <!-- Edit -->
+            <button class="text-blue-600 hover:text-blue-800 p-2 rounded-full hover:bg-blue-100 transition" (click)="openEditModal(user)" title="{{ 'USER.EDIT_BTN' | translate }}">✏️</button>
+            <!-- Delete -->
+            <button class="text-red-600 hover:text-red-800 p-2 rounded-full hover:bg-red-100 transition" (click)="confirmDelete(user)" title="{{ 'USER.DELETE_BTN' | translate }}">🗑️</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

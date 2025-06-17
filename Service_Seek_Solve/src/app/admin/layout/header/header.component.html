@@ -1,0 +1,15 @@
+<header class="bg-white shadow px-6 py-4 flex justify-between items-center">
+  <!-- Logo space -->
+  <a href="/" class="flex items-center">
+    <img src="assets/images/logo.png" alt="logo" class="h-12 w-auto object-contain">
+  </a>
+
+  <!-- Language Selector (Working Button) -->
+  <div>
+    <button 
+      (click)="switchLanguage()"
+      class="bg-gray-100 text-gray-800 border border-gray-300 px-3 py-1 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600">
+      {{ currentLang === 'en' ? 'اردو' : 'English' }}
+    </button>
+  </div>
+</header>

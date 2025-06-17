@@ -1,0 +1,21 @@
+screenCodeLabel= S-CAMPAIGNS
+
+Upload an Image
+Upload a Contacts File
+Only .png files, max 10MB
+xlsx file size no more than 10MB
+validate & Upload
+Upload
+Upload an Image
+Only .jpg or .png files, max 10MB
+
+
+UPLOAD_AN_IMAGE
+UPLOAD_A_CONTACTS_FILE
+PNG
+XLSX
+VALIDATE_UPLOAD
+UPLOAD
+UPLOAD_AN_IMAGE
+JPG
+

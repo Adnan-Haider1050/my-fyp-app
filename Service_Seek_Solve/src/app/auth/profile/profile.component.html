@@ -1,0 +1,76 @@
+<!-- Profile Section -->
+<section class="min-h-screen flex flex-col justify-start items-center bg-gray-100 px-4 py-10">
+  <div class="w-full md:max-w-full p-8 bg-white shadow-xl rounded-2xl">
+    <div class="flex flex-col items-center text-center">
+      <img
+        [src]="'http://localhost:5000' + user?.profileImage"
+        alt="Profile"
+        class="w-36 h-36 rounded-full object-cover mb-4 bg-gray-100"
+      />
+
+      <h2 class="text-3xl font-bold text-gray-800">{{ user?.name }}</h2>
+      <p class="text-gray-600 text-lg">{{ user?.email }}</p>
+      <p class="text-sm text-indigo-500 font-medium uppercase mt-1">{{ user?.role }}</p>
+
+      <button
+  class="mt-5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm px-5 py-2 rounded-lg shadow"
+  (click)="openEditModal()"
+>
+  {{ 'PROFILE.EDIT_BTN' | translate }}
+</button>
+
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+      <div class="bg-gray-50 p-4 rounded-lg">
+        <label class="text-xs font-semibold text-gray-500 uppercase">
+  {{ 'PROFILE.PHONE_LABEL' | translate }}
+</label>
+       <p class="text-gray-800 mt-1 text-lg">{{ user?.phoneNumber || ('PROFILE.NOT_PROVIDED' | translate) }}</p>
+      </div>
+      <div class="bg-gray-50 p-4 rounded-lg">
+        <label class="text-xs font-semibold text-gray-500 uppercase">
+  {{ 'PROFILE.LOCATION_LABEL' | translate }}
+</label>
+       <p class="text-gray-800 mt-1 text-lg">{{ user?.location || ('PROFILE.NOT_SET' | translate) }}</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal for Editing Profile -->
+<div *ngIf="isEditModalOpen" class="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50 px-4">
+  <div class="bg-white p-8 rounded-xl shadow-xl w-full max-w-xl">
+    <h3 class="text-2xl font-semibold text-center text-indigo-600 mb-6">
+  {{ 'PROFILE.UPDATE_HEADING' | translate }}
+</h3>
+    <form (ngSubmit)="updateProfile()" class="space-y-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+       <input type="text" [(ngModel)]="editUser.name" name="name"
+       [placeholder]="'PROFILE.PLACEHOLDER_NAME' | translate" class="w-full px-4 py-2 border rounded-lg" required />
+
+<input type="email" [(ngModel)]="editUser.email" name="email"
+       [placeholder]="'PROFILE.PLACEHOLDER_EMAIL' | translate" class="w-full px-4 py-2 border rounded-lg" required />
+
+<input type="text" [(ngModel)]="editUser.phoneNumber" name="phoneNumber"
+       [placeholder]="'PROFILE.PLACEHOLDER_PHONE' | translate" class="w-full px-4 py-2 border rounded-lg" />
+
+<input type="text" [(ngModel)]="editUser.location" name="location"
+       [placeholder]="'PROFILE.PLACEHOLDER_LOCATION' | translate" class="w-full px-4 py-2 border rounded-lg" />
+
+<input type="password" [(ngModel)]="editUser.password" name="password"
+       [placeholder]="'PROFILE.PLACEHOLDER_PASSWORD' | translate" class="w-full px-4 py-2 border rounded-lg" />
+
+      </div>
+      <div class="flex justify-center gap-4 mt-6">
+        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg">
+  {{ 'PROFILE.UPDATE_BTN' | translate }}
+</button>
+       <button type="button" (click)="isEditModalOpen = false" class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-6 py-2 rounded-lg">
+  {{ 'PROFILE.CANCEL_BTN' | translate }}
+</button>
+      </div>
+    </form>
+  </div>
+</div>

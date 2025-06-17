@@ -1,0 +1,117 @@
+<!-- Layout Wrapper -->
+<div class="h-screen flex flex-col bg-gray-50">
+
+  <!-- Header: Full Width -->
+  <app-header class="z-40 w-full shadow-md bg-white"></app-header>
+
+  <!-- Main Content Area (Sidebar + Content) -->
+  <div class="flex flex-1 relative">
+
+    <!-- Sidebar (Visible when toggled) -->
+    <div *ngIf="isSidebarVisible"
+         class="w-64 bg-white shadow-md border-r border-gray-200 flex flex-col z-30">
+
+      <!-- Sidebar Header -->
+      <!-- Sidebar Header -->
+<div class="flex items-center justify-between p-4 border-b border-gray-300">
+  <h2 class="text-xl font-bold text-indigo-600">{{ 'SIDEBAR.TITLE' | translate }}</h2>
+  <!-- Collapse Button -->
+  <button (click)="toggleSidebar()" class="text-indigo-600 hover:text-indigo-500">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+</div>
+
+<!-- Navigation -->
+<nav class="p-4 space-y-2 text-gray-900">
+  <!-- Dashboard -->
+  <a [routerLink]="'dashboard'" routerLinkActive="bg-indigo-100 text-indigo-600 font-semibold"
+     [routerLinkActiveOptions]="{ exact: true }"
+     class="flex items-center px-3 py-2 rounded-lg transition">
+    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6" />
+    </svg>
+    {{ 'SIDEBAR.DASHBOARD' | translate }}
+  </a>
+
+  <!-- Admin -->
+  <ng-container *ngIf="role === 'admin'">
+    <a [routerLink]="'usermanagement'" routerLinkActive="bg-indigo-100 text-indigo-600 font-semibold"
+       [routerLinkActiveOptions]="{ exact: true }"
+       class="flex items-center px-3 py-2 rounded-lg transition">
+      <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+      </svg>
+      {{ 'SIDEBAR.USER_MANAGEMENT' | translate }}
+    </a>
+  </ng-container>
+
+  <!-- Provider -->
+  <ng-container *ngIf="role === 'provider'">
+    <a [routerLink]="'profile'" routerLinkActive="bg-indigo-100 text-indigo-600 font-semibold"
+       [routerLinkActiveOptions]="{ exact: true }"
+       class="flex items-center px-3 py-2 rounded-lg transition">
+      <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M5.121 17.804A4 4 0 019 15h6a4 4 0 013.879 2.804M12 11a4 4 0 100-8 4 4 0 000 8z" />
+      </svg>
+      {{ 'SIDEBAR.PROFILE' | translate }}
+    </a>
+  </ng-container>
+
+  <!-- Seeker -->
+  <ng-container *ngIf="role === 'seeker'">
+    <a [routerLink]="'services'" routerLinkActive="bg-indigo-100 text-indigo-600 font-semibold"
+       [routerLinkActiveOptions]="{ exact: true }"
+       class="flex items-center px-3 py-2 rounded-lg transition">
+      <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-6h13M9 5v6h13" />
+      </svg>
+      {{ 'SIDEBAR.SERVICES' | translate }}
+    </a>
+
+    <a [routerLink]="'profile'" routerLinkActive="bg-indigo-100 text-indigo-600 font-semibold"
+       [routerLinkActiveOptions]="{ exact: true }"
+       class="flex items-center px-3 py-2 rounded-lg transition">
+      <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M5.121 17.804A4 4 0 019 15h6a4 4 0 013.879 2.804M12 11a4 4 0 100-8 4 4 0 000 8z" />
+      </svg>
+      {{ 'SIDEBAR.PROFILE' | translate }}
+    </a>
+  </ng-container>
+
+  <!-- Logout -->
+  <a (click)="logout()" class="flex items-center px-3 py-2 rounded-lg hover:bg-red-100 text-red-600 transition cursor-pointer">
+    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7" />
+    </svg>
+    {{ 'SIDEBAR.LOGOUT' | translate }}
+  </a>
+</nav>
+
+
+    </div>
+
+    <!-- Toggle Button when sidebar is hidden -->
+ <button
+    *ngIf="!isSidebarVisible"
+    (click)="toggleSidebar()"
+    class="absolute top-4 left-4 z-20 p-2 bg-white border border-gray-300 shadow rounded-md hover:bg-gray-100 transition"
+    aria-label="Open sidebar menu">
+    <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <!-- Changed to right-pointing arrow -->
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+    <!-- Page Content Area -->
+    <div class="flex-1 flex flex-col">
+
+      <!-- Routed Content -->
+      <main class="flex-1 p-0 bg-gray-100 overflow-auto">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>
+</div>

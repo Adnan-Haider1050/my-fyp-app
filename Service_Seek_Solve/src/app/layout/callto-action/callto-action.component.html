@@ -1,0 +1,17 @@
+<section class="bg-indigo-600 py-20 text-center text-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+      {{ 'CTA_TITLE' | translate }}
+    </h2>
+    <p class="text-xl mb-8">
+      {{ 'CTA_DESC' | translate }}
+    </p>
+
+    <div class="flex justify-center gap-6">
+      <!-- CTA Button 1: Sign Up -->
+      <a [routerLink]="'/signup'" class="bg-white text-indigo-600 px-6 py-3 rounded-lg text-lg font-semibold hover:bg-indigo-100 transition">
+        {{ 'CTA_SIGNUP' | translate }}
+      </a>
+    </div>
+  </div>
+</section>

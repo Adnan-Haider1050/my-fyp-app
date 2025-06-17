@@ -1,0 +1,48 @@
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      
+      <!-- 🔰 Logo -->
+      <a href="/" class="text-xl font-bold text-indigo-600">
+        <img src="assets/images/logo.png" alt="logo" class="h-12 w-auto object-contain">
+
+      </a>
+  
+      <!-- 🗂️ Nav Links (Hidden on mobile) -->
+      <nav class="hidden md:flex gap-6 text-gray-700">
+        <a [routerLink]="'/'" class="hover:text-indigo-600">{{ 'HOME' | translate }}</a>
+        <a [routerLink]="'/service-at-home'" class="hover:text-indigo-600">{{ 'SERVICES' | translate }}</a>
+
+        <a [routerLink]="'/about-us'" class="hover:text-indigo-600">{{ 'ABOUT' | translate }}</a>
+        
+      </nav>
+  
+      <!-- 🔐 Buttons -->
+      <div class="hidden md:flex items-center gap-4">
+        <button [routerLink]="'/signup'" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">{{ 'SIGNUP' | translate }}</button>
+        <button [routerLink]="'/login'" class="text-gray-700 hover:text-indigo-600">{{ 'LOGIN' | translate }}</button>
+        <button (click)="switchLanguage()" class="text-sm hover:underline ml-4">{{ currentLang === 'en' ? 'اردو' : 'English' }}</button>
+      </div>
+  
+      <!-- 📱 Mobile Menu Button -->
+      <div class="md:hidden">
+        <button (click)="toggleMobileMenu()">
+          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+  
+    </div>
+  
+    <!-- 📱 Mobile Nav Menu (Hidden by default) -->
+    <div *ngIf="isMobileMenuVisible" class="md:hidden px-4 pb-4">
+      <a [routerLink]="'/'" class="block py-2 text-gray-700 hover:text-indigo-600">{{ 'HOME' | translate }}</a>
+      <a [routerLink]="'/service-at-home'" class="block py-2 text-gray-700 hover:text-indigo-600">{{ 'SERVICES' | translate }}</a>
+      <a [routerLink]="'/about-us'" class="block py-2 text-gray-700 hover:text-indigo-600">{{ 'ABOUT' | translate }}</a>
+      <button [routerLink]="'/signup'" class="w-full text-left py-2 text-indigo-600 font-semibold">{{ 'SIGNUP' | translate }}</button>
+      <button (click)="switchLanguage()" class="text-sm hover:underline ml-4"> {{ currentLang === 'en' ? 'اردو' : 'English' }}</button>
+      <button [routerLink]="'/login'"  class="w-full text-left py-2 text-gray-700 hover:text-indigo-600">{{ 'LOGIN' | translate }}</button>
+    </div>
+  </header>
+  

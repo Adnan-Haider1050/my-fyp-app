@@ -1,0 +1,115 @@
+<div class="min-h-screen flex items-center justify-center bg-white px-4 py-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl w-full items-center">
+    
+    <!-- Left: Sign-up Form -->
+    <div>
+      <!-- Tabs -->
+      <div class="flex gap-4 mb-6">
+        <button
+          [ngClass]="isBuyer ? 'bg-white text-indigo-600 border border-indigo-600' : 'bg-indigo-600 text-white'"
+          class="px-4 py-2 rounded-md font-semibold"
+          (click)="selectRole(true)"
+        >
+          {{ 'SIGNUP_AS_BUYER' | translate }}
+        </button>
+        <button
+          [ngClass]="!isBuyer ? 'bg-white text-indigo-600 border border-indigo-600' : 'bg-indigo-600 text-white'"
+          class="px-4 py-2 rounded-md font-semibold"
+          (click)="selectRole(false)"
+        >
+          {{ 'SIGNUP_AS_SELLER' | translate }}
+        </button>
+      </div>
+
+      <!-- Form -->
+      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="space-y-4">
+        <div>
+          <label class="block mb-1 font-medium">{{ 'NAME_LABEL' | translate }}</label>
+          <input type="text" formControlName="name" class="w-full border px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700"/>
+        </div>
+
+        <div>
+          <label class="block mb-1 font-medium">{{ 'EMAIL_LABEL' | translate }}</label>
+          <input type="email" formControlName="email" class="w-full border px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700"/>
+        </div>
+
+        <div>
+          <label class="block mb-1 font-medium">{{ 'PHONE_LABEL' | translate }}</label>
+          <input type="tel" formControlName="phoneNumber" placeholder="+9203001123456" class="w-full border px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700"/>
+        </div>
+
+        <div>
+          <label class="block mb-1 font-medium">{{ 'PASSWORD_LABEL' | translate }}</label>
+          <div class="relative">
+            <input [type]="showPassword ? 'text' : 'password'"
+                   formControlName="password"
+                   class="w-full border px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700"/>
+            <button type="button" (click)="togglePasswordVisibility()"
+                    class="absolute right-2 top-2 text-sm text-gray-600">
+              {{ showPassword ? ('HIDE' | translate) : ('SHOW' | translate) }}
+            </button>
+          </div>
+        </div>
+
+        <!-- Profile Image -->
+        <div>
+          <label class="block mb-1 font-medium">{{ 'PROFILE_IMAGE' | translate }}</label>
+          <input type="file" (change)="onFileSelected($event)"
+                 class="w-full border px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700"/>
+          <div *ngIf="previewUrl" class="mt-2">
+            <img [src]="previewUrl" alt="Preview" width="120" class="rounded-md" />
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div>
+          <label class="block mb-1 font-medium">{{ 'LOCATION_LABEL' | translate }}</label>
+          <div class="flex gap-2">
+            <input
+              id="autocomplete"
+              type="text"
+              formControlName="location"
+              class="w-full border px-3 py-2 rounded-md"
+              [placeholder]="'LOCATION_PLACEHOLDER' | translate"
+            />
+            <button type="button"
+                    (click)="detectLocation()"
+                    class="bg-indigo-600 text-white px-3 py-2 rounded-md hover:bg-indigo-700"
+                    [disabled]="isLocating">
+              {{ isLocating ? ('LOCATING' | translate) : ('DETECT_BUTTON' | translate) }}
+            </button>
+          </div>
+        </div>
+
+        <!-- Seller Only: Profession -->
+        <div *ngIf="!isBuyer">
+          <label class="block mb-1 font-medium">{{ 'PROFESSION_LABEL' | translate }}</label>
+          <select formControlName="profession"
+                  class="w-full border px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700">
+            <option value="">{{ 'SELECT_PROFESSION' | translate }}</option>
+            <option>{{ 'PLUMBER' | translate }}</option>
+            <option>{{ 'ELECTRICIAN' | translate }}</option>
+            <option>{{ 'AC_TECHNICIAN' | translate }}</option>
+            <option>{{ 'CLEANING_SERVICE' | translate }}</option>
+          </select>
+        </div>
+
+        <button type="submit"
+                class="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700">
+          {{ 'CREATE_ACCOUNT' | translate }}
+        </button>
+      </form>
+    </div>
+
+    <!-- Right: Logo & Headline -->
+    <div class="text-center flex flex-col items-center justify-center px-4">
+      <img src="assets/images/logo.png" alt="Logo" class="mx-auto h-20 w-auto" />
+      <h1 class="text-4xl md:text-5xl font-extrabold text-indigo-600 animate-3d-text leading-tight"
+          [innerHTML]="'FIND_OFFER_SERVICES' | translate">
+      </h1>
+      <p class="mt-6 text-lg font-semibold text-black">
+        <span class="typewriter">{{ 'DISCOVER_LINE' | translate }}</span>
+      </p>
+    </div>
+  </div>
+</div>

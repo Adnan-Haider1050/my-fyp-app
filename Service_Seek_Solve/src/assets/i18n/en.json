@@ -1,0 +1,297 @@
+{
+  "HOME": "Home",
+  "SERVICES": "Services",
+  "ABOUT": "About",
+  "LOGIN": "Login",
+  "SIGNUP": "Sign Up",
+
+  "FOOTER": {
+    "COMPANY": "Company",
+    "ABOUT_US": "About Us",
+    "CONTACT": "Contact",
+    "CAREERS": "Careers",
+    "LEGAL": "Legal",
+    "PRIVACY": "Privacy Policy",
+    "TERMS": "Terms of Service",
+    "COOKIE": "Cookie Policy",
+    "FOLLOW": "Follow Us",
+    "NEWSLETTER": "Newsletter",
+    "SUBSCRIBE_TEXT": "Subscribe to our newsletter for the latest updates.",
+    "EMAIL_PLACEHOLDER": "Your Email",
+    "SUBSCRIBE": "Subscribe",
+    "COPYRIGHT": "© 2025 Service Seek & Solve. All rights reserved."
+  },
+  
+    "HERO": {
+    "HEADING": "Find Trusted Services Near You",
+    "DESCRIPTION": "Connect with skilled professionals for plumbing, electrical, AC repair, and more – all in one place.",
+    "CTA": "Get Started"
+  },
+  
+  "WHY_CHOOSE_US": {
+    "HEADING": "Why Choose Us?",
+    "SUBHEADING": "Built for your convenience, powered by trust.",
+    "DESCRIPTION": "Experience the best in service, safety, and simplicity with Service Seek & Solve.",
+    "FEATURES": {
+      "SECURE": {
+        "TITLE": "Secure Payments",
+        "DESC": "Payments are encrypted and processed through trusted gateways like Easypaisa and JazzCash."
+      },
+      "VERIFIED": {
+        "TITLE": "Verified Providers",
+        "DESC": "All professionals undergo ID verification and background checks for your peace of mind."
+      },
+      "LOCAL": {
+        "TITLE": "Local & Fast",
+        "DESC": "We show nearby professionals in real-time — so you get help when and where you need it."
+      },
+      "SUPPORT": {
+        "TITLE": "24/7 Support",
+        "DESC": "Our team is always here to help you — anytime, any day."
+      },
+      "MULTILINGUAL": {
+        "TITLE": "Multilingual Support",
+        "DESC": "Easily translate content into Urdu or English for better understanding."
+      },
+      "REVIEWS": {
+        "TITLE": "Customer Reviews",
+        "DESC": "See honest feedback and ratings from others before hiring a service provider."
+      }
+    },
+    "CTA": "Learn More About Us"
+  },
+  "TEAM": {
+    "TITLE": "Meet Our Team",
+    "DESCRIPTION": "We're a platform—not a service provider or seeker—run by passionate individuals who connect trusted professionals with people who need them.",
+    "SUNNY": {
+      "ROLE": "Founder & Platform Manager",
+      "DESC": "Leading vision and growth, ensuring our platform connects the right people smoothly."
+    },
+    "ADNAN": {
+      "ROLE": "Operations Lead",
+      "DESC": "Handles team coordination, listings, and daily workflow to keep things running efficiently."
+    },
+    "USMAN": {
+      "ROLE": "Technical Lead",
+      "DESC": "Manages development, backend services, and keeps the platform scalable and fast."
+    },
+    "CTA": "Want to Collaborate with Us?"
+  },
+  
+  "TITLE": "Trusted Home & Office Services",
+  "DESCRIPTION": "Book skilled professionals at your convenience. We deliver reliable, affordable, and verified services for all your needs.",
+  
+  "PLUMBING": "Plumbing",
+  "PLUMBING_DESC": "Leak fixes, pipe installations, and complete bathroom/kitchen plumbing solutions.",
+  
+  "ELECTRICIAN": "Electrician",
+  "ELECTRICIAN_DESC": "Expert electrical repairs, rewiring, fuse replacement, and troubleshooting.",
+  
+  "AC_TECHNICIAN": "AC Technician",
+  "AC_TECHNICIAN_DESC": "Installation, gas refilling, maintenance, and full AC repair services.",
+  
+  "CLEANING": "Cleaning",
+  "CLEANING_DESC": "Deep cleaning for homes and offices with eco-friendly solutions and trained staff.",
+  
+  "PAINTER": "Painter",
+  "PAINTER_DESC": "Interior & exterior painting with clean finish, color consultancy & material support.",
+  
+  "CARPENTER": "Carpenter",
+  "CARPENTER_DESC": "Furniture repair, fittings, doors, cupboards, and modular furniture assembly.",
+  
+  "BOOK_SERVICE": "Book a Service",
+  
+  "HOW_IT_WORKS_TITLE": "How It Works",
+  "HOW_IT_WORKS_DESC": "Just 3 simple steps to get started with Service Seek & Solve",
+
+  "STEP_1_TITLE": "Create an Account",
+  "STEP_1_DESC": "Register as a service seeker or provider to get started.",
+
+  "STEP_2_TITLE": "Find Nearby Services",
+  "STEP_2_DESC": "Search and view available service providers near your location.",
+
+  "STEP_3_TITLE": "Hire & Relax",
+  "STEP_3_DESC": "Book a service provider and let them handle the rest.",
+
+  "LEARN_MORE": "Learn More",
+  
+  "WHY_CHOOSE_US_TITLE": "Why Choose Us?",
+  "WHY_CHOOSE_US_DESC": "Experience the best service, safety, and ease with Service Seek & Solve",
+
+  "FEATURE_1_TITLE": "Secure Payments",
+  "FEATURE_1_DESC": "All transactions are protected and hassle-free with our trusted payment gateway.",
+
+  "FEATURE_2_TITLE": "Verified Professionals",
+  "FEATURE_2_DESC": "All service providers are fully vetted, ensuring quality and trust.",
+
+  "FEATURE_3_TITLE": "Local Services",
+  "FEATURE_3_DESC": "Find service providers near you for faster and more convenient help.",
+  
+  "CTA_TITLE": "Ready to Get Started?",
+  "CTA_DESC": "Join thousands of satisfied users who have found reliable services with Service Seek & Solve.",
+  "CTA_SIGNUP": "Sign Up Now",
+  
+  "LOGIN_TITLE": "Sign in to your account",
+  "EMAIL_LABEL": "Email address",
+  "PASSWORD_LABEL": "Password",
+  "SIGN_IN_BUTTON": "Sign in",
+  "NOT_A_MEMBER": "Not a member?",
+  "CREATE_ACCOUNT_LINK": "Create Account",
+  
+  "SIGNUP_AS_BUYER": "Sign Up as Buyer",
+  "SIGNUP_AS_SELLER": "Sign Up as Seller",
+  "NAME_LABEL": "Name",
+  
+  "PHONE_LABEL": "Phone Number",
+  
+  "SHOW": "Show",
+  "HIDE": "Hide",
+  "PROFILE_IMAGE": "Profile Image",
+  "LOCATION_LABEL": "Location",
+  "LOCATION_PLACEHOLDER": "Enter your location",
+  "DETECT_BUTTON": "Detect",
+  "LOCATING": "Locating...",
+  "PROFESSION_LABEL": "Profession",
+  "SELECT_PROFESSION": "Select a profession",
+  "PLUMBER": "Plumber",
+  
+  
+  "CLEANING_SERVICE": "Cleaning Service",
+  "CREATE_ACCOUNT": "Create Account",
+  "FIND_OFFER_SERVICES": "Find & Offer<br>Trusted Services",
+  "DISCOVER_LINE": "Discover your skills, serve your community, and turn your efforts into impact.",
+
+ "SIDEBAR": {
+    "TITLE": "Service Panel",
+    "DASHBOARD": "Dashboard",
+    "USER_MANAGEMENT": "User Management",
+    "PROFILE": "Profile",
+    "SERVICES": "Services",
+    "LOGOUT": "Logout"
+  },
+   "PROFILE": {
+    "EDIT_BTN": "✏️ Edit Profile",
+    "UPDATE_HEADING": "Update Your Profile",
+    "PLACEHOLDER_NAME": "Name",
+    "PLACEHOLDER_EMAIL": "Email",
+    "PLACEHOLDER_PHONE": "Phone",
+    "PLACEHOLDER_LOCATION": "Location",
+    "PLACEHOLDER_PASSWORD": "New Password",
+    "UPDATE_BTN": "Update",
+    "CANCEL_BTN": "Cancel",
+    "PHONE_LABEL": "Phone",
+    "LOCATION_LABEL": "Location",
+    "NOT_PROVIDED": "Not provided",
+    "NOT_SET": "Not set",
+    "PHONE": "Phone",
+    "LOCATION": "Location",
+    "CATEGORY": "Category",
+    "TOTAL_REQUESTS": "Total Requests",
+    "COMPLETED_REQUESTS": "Complete Requests",
+    "SUBMITTED_REQUESTS": "Submitted Requests",
+    "NAME": "Name",
+    "EMAIL": "Email",
+    "MESSAGE": "Message",
+    "COMPLETE": "Complete",
+    "ACTIONS": "Actions",
+    "DELETE_CONFIRM": "Are you sure?",
+    "DELETE_PROMPT": "Do you really want to delete",
+    "DELETE_YES": "Yes, Delete",
+    "CANCEL": "Cancel"
+ 
+  },
+  "SEND_REQUEST": {
+  "TITLE": "Send a Request",
+  "FULL_NAME": "Full Name",
+  "EMAIL": "Email",
+  "MESSAGE": "Message",
+  "BUTTON": "Send Request"
+},
+"PLATFORM_STATS": {
+  "TITLE": "Platform Stats",
+  "DESCRIPTION": "An overview of what's happening on our service platform.",
+  "TOTAL_USERS": "Total Users",
+  "USERS_TEXT": "registered users on the platform",
+  "PROVIDERS": "Service Providers",
+  "PROVIDERS_TEXT": "verified professionals",
+  "SEEKERS": "Service Seekers",
+  "SEEKERS_TEXT": "active seekers on the platform",
+  "USER_CATEGORY_OVERVIEW": "User Category Overview",
+  "SEEKER_LABEL": "Seeker",
+  "PROVIDER_LABEL": "Provider"
+},
+"SEARCH": {
+  "SECTION_TITLE": "Looking for a reliable service?",
+  "SECTION_SUBTITLE": "Find the right service provider near you",
+  "PLACEHOLDER": "Search services by name, profession or location",
+  "PHONE": "Phone",
+  "LOCATION": "Location",
+  "LEARN_MORE": "Learn More",
+  "NOT_AVAILABLE": "Service not available yet?",
+  "CREATE_THREAD": "Create a new thread"
+},
+"USER": {
+  "EDIT_TITLE": "Edit User",
+  "NAME": "Name",
+  "EMAIL": "Email",
+  "PHONE": "Phone",
+  "PASSWORD": "Password",
+  "ROLE": "Role",
+  "ROLE_ADMIN": "Admin",
+  "ROLE_PROVIDER": "Provider",
+  "ROLE_SEEKER": "Seeker",
+  "UPDATE_BTN": "Update",
+  "CANCEL_BTN": "Cancel",
+  "DELETE_CONFIRM_TITLE": "Are you sure?",
+  "DELETE_CONFIRM_TEXT": "Do you really want to delete",
+  "DELETE_CONFIRM_YES": "Yes, Delete",
+  "MANAGEMENT_TITLE": "User Management",
+  "SEARCH_PLACEHOLDER": "Search users by name or email",
+  "ACTIONS": "Actions",
+  "EDIT_BTN": "Edit User",
+  "DELETE_BTN": "Delete User"
+},
+"OTP": {
+    "CONFIRM_TITLE": "Confirm OTP",
+    "INSTRUCTION": "Enter the OTP we just sent to your phone number for verification",
+    "PLACEHOLDER": "Enter OTP",
+    "CONFIRM_BUTTON": "Confirm",
+    "SUCCESS": "OTP Verified Successfully!",
+    "ERROR": "Incorrect OTP. Please try again.",
+     "VERIFIED_TITLE": "OTP Verified",
+    "VERIFIED_TEXT": "Your phone number has been successfully verified!",
+    "SIGNUP_NOT_FOUND_TITLE": "Error",
+    "SIGNUP_NOT_FOUND_TEXT": "Signup data not found",
+    "SIGNUP_SUCCESS_TITLE": "Signup Complete",
+    "SIGNUP_SUCCESS_TEXT": "Your account has been created!",
+    "SIGNUP_FAILED_TITLE": "Signup Failed",
+    "SIGNUP_FAILED_TEXT": "Please try again later.",
+    "INCORRECT_TITLE": "Incorrect OTP",
+    "INCORRECT_TEXT": "The OTP you entered is incorrect. Please try again."
+  },
+   
+  "POPUP": {
+    "ADDRESS_NOT_FOUND_TITLE": "Address Not Found",
+    "ADDRESS_NOT_FOUND_TEXT": "We could not detect your location address.",
+    "LOCATION_ERROR_TITLE": "Location Error",
+    "LOCATION_ERROR_TEXT": "Location access was denied or failed. Please enable it and try again.",
+    "INCOMPLETE_FORM_TITLE": "Incomplete Form",
+    "INCOMPLETE_FORM_TEXT": "Please fill all required fields with valid details.",
+    "OTP_SENT_TITLE": "OTP Sent",
+    "OTP_SENT_TEXT": "An OTP has been sent to your WhatsApp number.",
+    "OTP_ERROR_TITLE": "OTP Error",
+    "OTP_ERROR_TEXT": "Failed to send OTP. Please try again later."
+  },"LOGIN1": {
+    "SUCCESS_TITLE": "Login Successful",
+    "SUCCESS_TEXT": "You are now logged in!",
+    "ERROR_TITLE": "Login Failed",
+    "ERROR_TEXT": "Invalid email or password!"
+  }
+  
+  
+
+
+
+
+
+}

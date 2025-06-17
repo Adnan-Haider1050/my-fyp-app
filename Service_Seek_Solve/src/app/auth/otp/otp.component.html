@@ -1,0 +1,42 @@
+<div class="flex flex-1 flex-col justify-center space-y-5 max-w-md mx-auto mt-24 pb-10">
+  <div class="flex flex-col space-y-2 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-indigo-600">
+      {{ 'OTP.CONFIRM_TITLE' | translate }}
+    </h2>
+    <p class="text-md md:text-xl">
+      {{ 'OTP.INSTRUCTION' | translate }}
+    </p>
+  </div>
+
+  <div class="flex flex-col max-w-md space-y-5">
+    <input
+      type="text"
+      [(ngModel)]="phone"
+      disabled
+      class="flex px-3 py-2 md:px-4 md:py-3 border-2 rounded-md font-medium placeholder:font-normal bg-gray-100 text-gray-500"
+    />
+
+    <input
+      type="text"
+      [(ngModel)]="userOtp"
+      maxlength="6"
+      [placeholder]="'OTP.PLACEHOLDER' | translate"
+      class="flex px-3 py-2 md:px-4 md:py-3 border-2 rounded-md font-medium placeholder:font-normal"
+    />
+
+    <button
+      (click)="verifyOtp()"
+      class="flex items-center justify-center px-4 py-3 border-2 rounded-lg font-medium border-indigo-600 bg-indigo-600 text-white"
+    >
+      {{ 'OTP.CONFIRM_BUTTON' | translate }}
+    </button>
+
+    <div *ngIf="verified" class="text-green-600 text-center font-semibold">
+      ✅ {{ 'OTP.SUCCESS' | translate }}
+    </div>
+
+    <div *ngIf="error" class="text-red-600 text-center font-semibold">
+      ❌ {{ 'OTP.ERROR' | translate }}
+    </div>
+  </div>
+</div>

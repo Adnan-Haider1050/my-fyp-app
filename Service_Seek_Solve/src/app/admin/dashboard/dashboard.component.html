@@ -1,0 +1,24 @@
+<!-- dashboard.component.html -->
+
+<!-- Service Provider Dashboard -->
+<section *ngIf="role === 'provider'">
+  <!-- yahan sirf provider ka section rakho -->
+ <app-provider-dashboard/>
+</section>
+
+<!-- Service Seeker Dashboard -->
+<section *ngIf="role === 'seeker'">
+  <!-- yahan sirf seeker ka section rakho -->
+  <app-seeker-dashboard/>
+</section>
+
+<!-- Admin Dashboard -->
+<section *ngIf="role === 'admin'">
+  <!-- yahan admin ka section rakho -->
+  <app-admin-dashboard/>
+</section>
+
+<!-- Agar koi role nahi mila -->
+<section *ngIf="!role">
+  <p class="text-center text-red-600 mt-8">User role not found. Please log in again.</p>
+</section>

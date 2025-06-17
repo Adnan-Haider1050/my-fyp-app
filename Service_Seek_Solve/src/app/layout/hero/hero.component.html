@@ -1,0 +1,24 @@
+<section [ngStyle]="backgroundStyle" class="relative text-white py-20 min-h-[70vh] flex items-center">
+  <!-- 🔲 Overlay for better text visibility -->
+  <div class="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+
+  <!-- ✅ Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4">
+    <div class="w-full md:w-2/3">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight drop-shadow-md">
+        {{ 'HERO.HEADING' | translate }}
+      </h1>
+      <p class="text-lg mb-6 text-gray-200">
+        {{ 'HERO.DESCRIPTION' | translate }}
+      </p>
+
+      <!-- 📢 CTA -->
+      <a
+        href="/signup"
+        class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg shadow"
+      >
+        {{ 'HERO.CTA' | translate }}
+      </a>
+    </div>
+  </div>
+</section>

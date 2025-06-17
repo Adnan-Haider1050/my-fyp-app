@@ -1,0 +1,15 @@
+section {
+  width: 100%;
+  background-repeat: no-repeat;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* 🔄 Smooth fade-in on background change */
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
