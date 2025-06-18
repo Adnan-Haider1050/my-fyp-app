@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component,OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-user-management',
@@ -12,7 +15,7 @@ searchText: string = ''; // 🔍 for input binding
 filteredUsers: any[] = []; // 👈 for filtered list
 selectedUserForDelete: any = null;
 selectedUserForEdit: any = null;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private translate: TranslateService) {}
 
   ngOnInit(): void {
     this.getAllUsers();
@@ -70,9 +73,23 @@ onSearchChange() {
         this.allUsers = this.allUsers.filter(u => u._id !== this.selectedUserForDelete._id);
         this.filteredUsers = this.filteredUsers.filter(u => u._id !== this.selectedUserForDelete._id);
         this.selectedUserForDelete = null;
+        Swal.fire({
+  icon: 'success',
+  title: this.translate.instant('USER.DELETE_SUCCESS_TITLE'),
+  text: this.translate.instant('USER.DELETE_SUCCESS_TEXT'),
+  timer: 2000,
+  showConfirmButton: false
+});
       },
       error: (err) => {
         console.error('❌ Failed to delete user:', err.message);
+        Swal.fire({
+    icon: 'error',
+    title: this.translate.instant('USER.DELETE_ERROR_TITLE'),
+    text: this.translate.instant('USER.DELETE_ERROR_TEXT'),
+    timer: 2000,
+    showConfirmButton: false
+  });
       }
     });
   }
@@ -91,10 +108,24 @@ updateUser() {
     .subscribe({
       next: (res) => {
         this.getAllUsers(); // Refresh list
-        this.selectedUserForEdit = null; // Close modal
+        this.selectedUserForEdit = null;
+       Swal.fire({
+  icon: 'success',
+  title: this.translate.instant('USER.UPDATE_SUCCESS_TITLE'),
+  text: this.translate.instant('USER.UPDATE_SUCCESS_TEXT'),
+  timer: 2000,
+  showConfirmButton: false
+});// Close modal
       },
       error: (err) => {
         console.error('❌ Failed to update user:', err.message);
+        Swal.fire({
+  icon: 'error',
+  title: this.translate.instant('USER.UPDATE_ERROR_TITLE'),
+  text: this.translate.instant('USER.UPDATE_ERROR_TEXT'),
+  timer: 2000,
+  showConfirmButton: false
+});
       }
     });
 }

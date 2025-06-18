@@ -140,6 +140,7 @@ export class SignUpComponent implements AfterViewInit {
 
   onSubmit() {
     if (this.signUpForm.invalid) {
+      this.signUpForm.markAllAsTouched(); 
       Swal.fire({
   icon: 'warning',
   title: this.translate.instant('POPUP.INCOMPLETE_FORM_TITLE'),

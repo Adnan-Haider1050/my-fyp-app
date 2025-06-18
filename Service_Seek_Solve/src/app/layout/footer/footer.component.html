@@ -49,12 +49,20 @@
       <div>
         <h3 class="text-xl font-semibold mb-4">{{ 'FOOTER.NEWSLETTER' | translate }}</h3>
         <p class="text-gray-400 mb-4">{{ 'FOOTER.SUBSCRIBE_TEXT' | translate }}</p>
-        <form class="flex space-x-4">
-          <input type="email" [placeholder]="'FOOTER.EMAIL_PLACEHOLDER' | translate" class="px-4 py-2 rounded-lg w-2/3" />
-          <button type="submit" class="bg-indigo-600 px-6 py-2 rounded-lg text-white hover:bg-indigo-700">
-            {{ 'FOOTER.SUBSCRIBE' | translate }}
-          </button>
-        </form>
+        <form class="flex space-x-4" (ngSubmit)="subscribe()">
+  <input
+    type="email"
+    [(ngModel)]="email"
+    name="email"
+    required
+    [placeholder]="'FOOTER.EMAIL_PLACEHOLDER' | translate"
+    class="px-4 py-2 rounded-lg w-2/3 text-black"
+  />
+  <button type="submit" class="bg-indigo-600 px-6 py-2 rounded-lg text-white hover:bg-indigo-700">
+    {{ 'FOOTER.SUBSCRIBE' | translate }}
+  </button>
+</form>
+
       </div>
 
     </div>

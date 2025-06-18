@@ -19,7 +19,14 @@
     "SUBSCRIBE_TEXT": "Subscribe to our newsletter for the latest updates.",
     "EMAIL_PLACEHOLDER": "Your Email",
     "SUBSCRIBE": "Subscribe",
-    "COPYRIGHT": "© 2025 Service Seek & Solve. All rights reserved."
+    "COPYRIGHT": "© 2025 Service Seek & Solve. All rights reserved.",
+    "SUCCESS_TITLE": "Subscribed!",
+    "SUCCESS_TEXT": "You have successfully subscribed.",
+    "ERROR_TITLE": "Error",
+    "ERROR_TEXT": "Subscription failed. Please try again.",
+    "ALREADY_TEXT": "You're already subscribed!",
+    "INVALID_TITLE": "Invalid Email",
+    "INVALID_EMAIL": "Please enter a valid email address."
   },
   
     "HERO": {
@@ -249,7 +256,15 @@
   "SEARCH_PLACEHOLDER": "Search users by name or email",
   "ACTIONS": "Actions",
   "EDIT_BTN": "Edit User",
-  "DELETE_BTN": "Delete User"
+  "DELETE_BTN": "Delete User",
+   "DELETE_SUCCESS_TITLE": "Deleted!",
+    "DELETE_SUCCESS_TEXT": "User has been successfully deleted.",
+    "UPDATE_SUCCESS_TITLE": "Updated!",
+    "UPDATE_SUCCESS_TEXT": "User updated successfully.",
+    "DELETE_ERROR_TITLE": "Error",
+    "DELETE_ERROR_TEXT": "Failed to delete user.",
+    "UPDATE_ERROR_TITLE": "Error",
+    "UPDATE_ERROR_TEXT": "Failed to update user."
 },
 "OTP": {
     "CONFIRM_TITLE": "Confirm OTP",
@@ -286,7 +301,19 @@
     "SUCCESS_TEXT": "You are now logged in!",
     "ERROR_TITLE": "Login Failed",
     "ERROR_TEXT": "Invalid email or password!"
+  },
+  
+  "VALIDATION": {
+    "NAME_REQUIRED": "Name is required.",
+    "EMAIL_REQUIRED": "Email is required.",
+    "EMAIL_INVALID": "Invalid email format.",
+    "PHONE_REQUIRED": "Phone number is required.",
+    "PHONE_PATTERN": "Phone must start with +92 and be 13 digits (e.g., +923001234567).",
+    "PASSWORD_REQUIRED": "Password is required."
   }
+   
+
+
   
   
 
