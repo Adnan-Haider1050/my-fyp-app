@@ -7,7 +7,7 @@ router.post('/send-otp', async (req, res) => {
 
   const otp = Math.floor(100000 + Math.random() * 900000);
   const instanceId = 'instance125960';
-  const token = '4hr5b9yj5axgnckb';
+  const token = '4hr5b9yj5axgnckb55ggg';
   const apiUrl = `https://api.ultramsg.com/${instanceId}/messages/chat`;
 
   const body = {
